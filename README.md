@@ -8,7 +8,10 @@ La aplicación permite al usuario:
 
 - Ajustar montos para evaluar distintos escenarios.
 
+- Visualizar gráficos, KPIs y medidas estadísticas.
+
 - Visualizar datos mediante tablas dinámicas, con opción de descarga directa a Excel.
+
 
 Los gráficos incorporados son interactivos; permiten la navegación y despliegan información detallada (tooltips) al situar el cursor sobre las barras."
 
