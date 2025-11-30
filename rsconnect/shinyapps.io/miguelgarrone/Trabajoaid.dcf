@@ -1,0 +1,12 @@
+name: Trabajoaid
+title: Trabajoaid
+username: miguelgarrone
+account: miguelgarrone
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16199276
+bundleId: 11253213
+url: https://miguelgarrone.shinyapps.io/Trabajoaid/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

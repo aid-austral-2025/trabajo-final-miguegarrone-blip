@@ -7,18 +7,26 @@ library(DT)
 library(openxlsx)
 library(shinymanager)
 
+# =========================
+# 1. Credenciales
+# =========================
+credenciales <- data.frame(
+  user = c("mgarrone"),
+  password = c("australaid"),
+  stringsAsFactors = FALSE
+)
 
 # =========================
 # 2. UI protegida
 # =========================
-ui <- 
+ui <- secure_app(
   fluidPage(
-    theme = shinytheme("darkly"),
+    theme = shinytheme("darkly"),           
     titlePanel(
       div(
         img(src = "https://universidadaustral.hiringroom.com/data/accounts/universidadaustral/microsite/ccaa99c6d26434124e55a55b75bb20ee.png",
             height = "60px", style = "margin-right:15px;"),
-        "Ingresos Austral S.A."
+        "Austral Rosario S.A."
       )
     ),
     
@@ -53,12 +61,16 @@ ui <-
       )
     )
   )
+)
 
 # =========================
-# 3. Server
+# 3. Server protegido
 # =========================
 server <- function(input, output, session) {
-
+  
+  # Autenticación
+  res_auth <- secure_server(check_credentials = check_credentials(credenciales, passphrase = NULL))
+  
   # Resetear filtros
   observeEvent(input$reset, {
     updateSelectInput(session, "mes", selected = sort(unique(unido$Mes))[3])
@@ -113,10 +125,10 @@ server <- function(input, output, session) {
       theme_minimal()
     
     ggplotly(g, tooltip = "text") %>%
-      layout(yaxis = list(title = "Monto", tickformat = ",.0f"))  # sin notación científica
+      layout(yaxis = list(title = "Monto", tickformat = ",.0f"))  # Sin notación científica
   })
   
-  # Estadísticas
+  # Estadísticas dinámicas
   output$estadisticas_ui <- renderUI({
     datos <- datos_filtrados()
     if (nrow(datos) > 0) {
@@ -192,6 +204,6 @@ server <- function(input, output, session) {
 }
 
 # =========================
-# 4. Lanzar la app
+# 4. Shiny APP
 # =========================
 shinyApp(ui = ui, server = server)
