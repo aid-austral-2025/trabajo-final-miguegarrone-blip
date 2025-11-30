@@ -12,3 +12,18 @@ La aplicación permite al usuario:
 
 Los gráficos incorporados son interactivos; permiten la navegación y despliegan información detallada (tooltips) al situar el cursor sobre las barras."
 
+
+Existen 2 formas de visualizar la Shiny APP:
+- En Rstudio se debe correr 2 scripts en el siguiente orden:
+    1- *Lectura.R* cargar en el entorno de trabajo la base de datos a utuilizar
+    2-  *app.R* es donde se encuentra desarrollada la shiny.
+
+- A traves del link
+
+https://miguelgarrone.shinyapps.io/Trabajoaid/
+
+*Credenciales:*
+
+Usuario: mgarrone
+
+Contraseña: australaid
