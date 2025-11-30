@@ -21,9 +21,10 @@ Existen 2 formas de visualizar la Shiny APP:
 - En Rstudio se debe correr 2 scripts en el siguiente orden:
 
     1- *Lectura.R* cargar en el entorno de trabajo la base de datos a utuilizar
+    
     2-  *app.R* es donde se encuentra desarrollada la shiny.
 
-- A traves del link
+- A traves del siguiente link
 
 https://miguelgarrone.shinyapps.io/Trabajoaid/
 
